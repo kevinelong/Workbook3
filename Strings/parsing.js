@@ -5,8 +5,9 @@
 
 function parseAndDisplayName(name){
     const SPACE = " ";
-    let whereToCut = name.indexOf(SPACE); // WHERE IS THE SPACE
-    let leftSide = name.substring(0, whereToCut); //TWO PARAMETERS - START AND STOP
+    const STARTING_INDEX = 0;
+    let whereToCut = name.indexOf(SPACE); // WHERE IS THE SPACE - offset
+    let leftSide = name.substring(STARTING_INDEX, whereToCut); //TWO PARAMETERS - START AND STOP
     let rightSide = name.substring(whereToCut); // ONE PARAMETER - WHERE TO START, (IMPLIED TO THE END)
 
     console.log("NAME: " + name);
