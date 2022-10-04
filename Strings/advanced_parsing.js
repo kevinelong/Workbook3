@@ -6,23 +6,23 @@
 function parseAndDisplayName(name) {
     const SPACE = " ";
     const STARTING_INDEX = 0;
+    const NO_MATCH = -1;
     let whereToCut = name.indexOf(SPACE); // WHERE IS THE SPACE - offset
     
-    if(whereToCut == -1){
+    if(whereToCut == NO_MATCH){
         //one name
         console.log("\nONLY: " + name);
         return; //EXIT FUNCTION
     }
 
     //AT LEAST TWO NAMES
-
     let leftSide = name.substring(STARTING_INDEX, whereToCut); //TWO PARAMETERS - START AND STOP
-    let rightSide = name.substring(whereToCut+1); // ONE PARAMETER - WHERE TO START, (IMPLIED TO THE END)
+    let rightSide = name.substring(whereToCut + 1); // ONE PARAMETER - WHERE TO START, (IMPLIED TO THE END)
 
     //CHECK FOR MIDDLE
     let whereToCut2 = rightSide.indexOf(SPACE); // WHERE IS THE SECOND SPACE - offset
 
-    if (whereToCut2 == -1) {
+    if (whereToCut2 == NO_MATCH) {
         // TWO NAMES
         //OLD CODE - NO MIDDLE
         console.log("\nNAME: " + name);
