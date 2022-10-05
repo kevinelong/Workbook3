@@ -1,0 +1,20 @@
+<body style="font-family: sans-serif;">
+    <label>
+        Travel Date:<br>
+        <input type="date" id="inputDate">
+        <button id="actionButton">Submit</button>
+    </label>
+    <p style="font-size: 0.8em;">
+        Your trip is in <span id="outputDays">?</span> days!
+    </p>
+</body>
+<script>
+function onClickActionButton(){
+    let travelDate = new Date(document.getElementById("inputDate").value);
+    let now = new Date(); // current dateTime
+    let msDiff = travelDate.getTime() - now.getTime();
+    let days = msDiff / (24 * 60 * 60 * 1000);
+    document.getElementById("outputDays").innerHTML = Math.ceil(days); //whole days ceiling
+}
+document.getElementById("actionButton").addEventListener("click", onClickActionButton);
+</script>
