@@ -1,0 +1,25 @@
+<body>
+    <h1 id="current"> Rock </h1>
+    <label><input type="radio" name="station" value="rock" checked> Rock </label><br>
+    <label><input type="radio" name="station" value="pop"> Pop </label><br>
+    <label><input type="radio" name="station" value="hiphop"> Hip Hop </label><br>
+    <label><input type="radio" name="station" value="rnb"> Rhythm and Blues </label><br>
+    <label><input type="radio" name="station" value="jazz"> Jazz </label><br>
+    <label><input type="radio" name="station" value="classical"> Classical </label><br>
+</body>
+<script>
+    let selectedRadio = "rock";
+    function onStationChange(event){
+        selectedRadio = event.target.value;
+        document.getElementById("current").innerHTML = selectedRadio;
+        if(selectedRadio == "jazz"){
+            alert("Cool man,... cool.");
+        }
+    }
+    function init(){
+        document.querySelectorAll("input[name='station']").forEach((radio)=>{
+            radio.addEventListener("change", onStationChange);
+        });
+    }
+    document.addEventListener("DOMContentLoaded", init);
+</script>
